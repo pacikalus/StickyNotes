@@ -1,0 +1,45 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:StickyNotesWpf"
+        Title="Sticky Notes"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual"
+        Background="#667eea"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <!-- background -->
+        <Rectangle>
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#667eea" Offset="0"/>
+                    <GradientStop Color="#764ba2" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- workspace -->
+        <Canvas Name="WorkspaceCanvas" Background="Transparent"
+                MouseLeftButtonDown="WorkspaceCanvas_MouseLeftButtonDown"/>
+
+        <!-- controls -->
+        <Border HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="20"
+                Background="#F2FFFFFF"
+                CornerRadius="10"
+                Padding="15"
+                Panel.ZIndex="1000">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="40" Height="40" Margin="4" Tag="Yellow" Click="ColorButton_Click" Background="#FFD966"/>
+                <Button Width="40" Height="40" Margin="4" Tag="Pink" Click="ColorButton_Click" Background="#FF9ECD"/>
+                <Button Width="40" Height="40" Margin="4" Tag="Blue" Click="ColorButton_Click" Background="#9EC8FF"/>
+                <Button Width="40" Height="40" Margin="4" Tag="Green" Click="ColorButton_Click" Background="#B4F1A4"/>
+                <Button Width="40" Height="40" Margin="4" Tag="Orange" Click="ColorButton_Click" Background="#FFB366"/>
+                <Button Width="40" Height="40" Margin="4" Tag="Purple" Click="ColorButton_Click" Background="#D9B3FF"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
